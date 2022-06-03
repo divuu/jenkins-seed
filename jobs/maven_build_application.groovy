@@ -1,33 +1,38 @@
-jobs('Spring-application-maven-seed-build') {
+// Jenkins Job DSL definition file for generating a Job for 
+// https://github.com/anuradhaneo/springboot-api-demo
 
-definition {
-    cps {
-        script('''
-            tools {
-                maven 'maven3.8.5'
+String basePath = 'springboot-api-demo'
+String gitRepository = 'https://github.com/opstree/spring3hibernate.git'
+String buildBranch = '*/main'
+String projectName = 'Build Project'
+String projectDisplayName = 'Springboot API Sample'
+String projectDescription = 'This example shows basic folder/job creation'
+String credentialIDGithub = 'github-anuradhaneo'
+String artifactGroupID = 'org.spring.boot.sample'
+String artifactID = 'SpringBootRestApiExample'
+final String HTTP = 'http'
+final String HTTPS = 'https'
+// root folder creation
+folder(basePath) {
+    displayName(projectDisplayName)
+    description(projectDescription)
+}
+// job definition
+mavenJob(basePath + '/' + projectName) {
+    description('Build the Java roject: ' + gitRepository)
+    scm {
+        git {
+            branch(buildBranch)
+            remote {
+                github (gitRepository, HTTPS, 'github.com')
+                credentials(credentialIDGithub)
             }
-            stages {
-                stage('Build') {
-                steps {
-                    echo 'Build Application started'
-                    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/opstree/spring3hibernate.git']]])
-                    sh "mvn -f pom.xml clean validate test compile" 
-                }
-            }
-            stage('Test') {
-                steps {
-                    echo 'Test Application'
-                }
-            }
-            stage('Deploy') {
-                steps {
-                    echo 'Deploy Application'
-                }
-            }     
-        }    
-       '''.stripIndent())
-       sandbox()
         }
+    }
+    triggers {
+        scm('@daily')
+    }
+    wrappers {
+        goals('clean install')
     }
 }
