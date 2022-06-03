@@ -2,7 +2,7 @@
 // https://github.com/anuradhaneo/springboot-api-demo
 
 String basePath = 'springboot-api-demo'
-String gitRepository = 'opstree/spring3hibernate.git'
+String gitRepository = 'opstree/spring3hibernate'
 String buildBranch = '*/master'
 String projectName = 'Build Project'
 String projectDisplayName = 'Springboot API Sample'
