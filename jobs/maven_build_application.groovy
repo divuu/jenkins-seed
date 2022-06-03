@@ -35,7 +35,4 @@ mavenJob(basePath + '/' + projectName) {
     wrappers {
         goals('clean validate compile')
     }
-    steps {
-        maven('mvn -f pom.xml clean validate compile')
-    }
 }
