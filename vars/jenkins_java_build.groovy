@@ -29,9 +29,9 @@ def call(String repoUrl) {
                    sh "mvn test"
                }
            }
-           stage("Packing Application") {
+           stage("compile Application") {
                steps {
-                   sh "mvn package -DskipTests"
+                   sh "mvn compile"
                }
            }
        }
