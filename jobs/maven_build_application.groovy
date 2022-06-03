@@ -3,7 +3,7 @@
 
 String basePath = 'springboot-api-demo'
 String gitRepository = 'https://github.com/opstree/spring3hibernate.git'
-String buildBranch = '*/main'
+String buildBranch = '*/master'
 String projectName = 'Build Project'
 String projectDisplayName = 'Springboot API Sample'
 String projectDescription = 'This example shows basic folder/job creation'
