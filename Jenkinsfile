@@ -1,2 +1,2 @@
-@Library('first-shared-lib') _
-jenkinsForJava 'https://github.com/iamvickyav/spring-boot-data-H2-embedded.git'
+@Library('pipeline-library-example') _
+jenkinsForJava 'https://github.com/opstree/spring3hibernate.git'
