@@ -7,11 +7,7 @@ String buildBranch = '*/master'
 String projectName = 'Build Project'
 String projectDisplayName = 'Springboot API Sample'
 String projectDescription = 'This example shows basic folder/job creation'
-String credentialIDGithub = 'github-anuradhaneo'
-String artifactGroupID = 'org.spring.boot.sample'
-String artifactID = 'SpringBootRestApiExample'
-final String HTTP = 'http'
-final String HTTPS = 'https'
+
 // root folder creation
 folder(basePath) {
     displayName(projectDisplayName)
