@@ -33,6 +33,9 @@ mavenJob(basePath + '/' + projectName) {
         scm('@daily')
     }
     wrappers {
-        goals('clean install')
+        goals('clean validate compile')
+    }
+    steps {
+        maven('mvn -f pom.xml clean validate compile')
     }
 }
