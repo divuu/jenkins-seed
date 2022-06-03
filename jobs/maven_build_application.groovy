@@ -25,7 +25,7 @@ mavenJob(basePath + '/' + projectName) {
             branch(buildBranch)
             remote {
                 github (gitRepository, HTTPS, 'github.com')
-                credentials(credentialIDGithub)
+                //credentials(credentialIDGithub)
             }
         }
     }
