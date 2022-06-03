@@ -1,4 +1,4 @@
-job('DSL-Tutorial-1-Test') {
+job('spring3hibernate-maven-build') {
     scm {
         git('https://github.com/opstree/spring3hibernate.git', 'master')
     }
