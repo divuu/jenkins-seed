@@ -35,7 +35,7 @@ def createDeploymentJob(jobName, repoUrl) {
 
 def buildPipelineJobs() {
     def repo = "https://github.com/opstree/spring3hibernate.git"
-    def repoUrl = repo + jobName + ".git"
+    def repoUrl = "https://github.com/opstree/spring3hibernate.git"
     def deployName = jobName + "_deploy"
     def testName = jobName + "_test"
 
