@@ -1,3 +1,7 @@
-@Library('pipeline-library-example') _
-//import vars.jenkins_java_build
-jenkinsForJava ('https://github.com/opstree/spring3hibernate.git')
+#!/usr/bin/env groovy
+
+// Configure using microservice-pipelines and using "part2" branch
+@Library("microservice-pipelines@main") _
+
+// Entry point into microservice-pipelines
+jenkinsJob.call()
